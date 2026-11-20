@@ -1,0 +1,33 @@
+# ===========================================
+# Fins de ligne cohérentes entre Windows, Linux et macOS
+# Critique pour Docker (conteneurs Linux)
+# ===========================================
+
+# Par défaut : détection texte/binaire, et LF forcé
+* text=auto eol=lf
+
+# === Scripts Windows (CRLF obligatoire) ===
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# === Linux / Docker ===
+*.sh text eol=lf
+Dockerfile text eol=lf
+
+# === Code et configuration ===
+*.py text eol=lf
+*.toml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.env* text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+# === Binaires (aucune conversion) ===
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
