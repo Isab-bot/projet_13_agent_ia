@@ -1,0 +1,44 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# === Environnements virtuels ===
+.venv/
+venv/
+
+# === UV ===
+# uv.lock est versionné (reproductibilité)
+
+# === Tests & qualité ===
+.pytest_cache/
+.ruff_cache/
+
+# === Secrets & config locale ===
+.env
+.env.local
+*.key
+*.pem
+
+# === Logs ===
+*.log
+
+# === IDE ===
+.vscode/
+.idea/
+
+# === OS ===
+Thumbs.db
+desktop.ini
+.DS_Store
+~$*
+
+# === Documents de travail personnels (non versionnés) ===
+rapport/
+commit_msg.txt
+
+
+# === Fichiers de travail ===
+commit_msg.txt
