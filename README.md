@@ -48,7 +48,7 @@ projet_13_agent_ia/
 ### Installation
 
 ```bash
-git clone <url-du-depot>
+git clone https://github.com/Isab-bot/projet_13_agent_ia.git
 cd projet_13_agent_ia
 ```
 
