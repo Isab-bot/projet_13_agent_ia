@@ -1,0 +1,33 @@
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.egg-info
+.pytest_cache
+.ruff_cache
+
+# Environnement virtuel (reconstruit dans l'image par uv sync)
+.venv
+.uv-cache
+
+# Tests (inutiles dans l'image de production)
+tests
+
+# Secrets et config locale (sécurité)
+.env
+.env.local
+
+# Docs
+*.md
+
+# IDE / OS
+.vscode
+.idea
+*.swp
+.DS_Store
+Thumbs.db
+
+# Docker lui-même
+.dockerignore
+Dockerfile*
