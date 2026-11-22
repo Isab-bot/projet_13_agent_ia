@@ -1,0 +1,15 @@
+# ============================================================
+# Orchestration des services - Projet 13 (Agent IA échecs)
+# Étape 1 : API FastAPI seule
+# Milvus, MongoDB et Angular seront ajoutés aux étapes concernées
+# ============================================================
+
+services:
+  api:
+    build:
+      context: ./backend          # Docker utilise backend/Dockerfile
+    image: chess-agent-api:dev
+    container_name: p13-api
+    restart: unless-stopped       # redémarre si plantage, pas si arrêt manuel
+    ports:
+      - "${API_PORT:-8000}:8000"  # hôte (.env, 8000 par défaut) : conteneur

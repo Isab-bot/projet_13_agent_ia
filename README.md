@@ -32,7 +32,7 @@ projet_13_agent_ia/
 │   ├── app/
 │   └── tests/
 ├── frontend/           # Interface Angular (étape 5)
-├── docker-compose.yml  # Orchestration des services (à venir)
+├── docker-compose.yml  # Orchestration des services 
 ├── .env.example        # Modèle des variables d'environnement
 └── README.md
 ```
@@ -71,7 +71,27 @@ uv sync --all-groups
 
 ### Lancement
 
-*À compléter (étape 1 — docker-compose).*
+### Lancement (Docker Compose)
+
+Depuis la racine du projet :
+
+```bash
+docker compose up -d --build
+docker compose ps        # attendre le statut (healthy)
+```
+
+| URL | Contenu |
+|---|---|
+| http://localhost:8000/api/v1/healthcheck | Signe de vie de l'API |
+| http://localhost:8000/docs | Documentation interactive (Swagger) |
+
+Le port `8000` correspond à `API_PORT` dans `.env`.
+
+### Arrêt
+
+```bash
+docker compose down
+```
 
 ## 📌 Avancement
 
