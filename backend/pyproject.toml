@@ -1,6 +1,7 @@
 [project]
-name = "backend"
+name = "chess-agent-backend"
 version = "0.1.0"
+description = "Backend FastAPI de l'agent IA d'aide aux ouvertures d'échecs (Projet 13 - OpenClassrooms AI Engineer)"
 requires-python = ">=3.13"
 dependencies = [
     "fastapi[standard]>=0.165.0",
