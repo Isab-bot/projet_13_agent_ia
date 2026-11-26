@@ -1,7 +1,7 @@
 """Configuration centralisée de l'API.
 
 Les constantes sont regroupées ici pour éviter les valeurs dispersées
-dans le code (même principe que api/config.py du Projet 8).
+dans le code.
 """
 
 API_TITLE = "Chess Agent API"
