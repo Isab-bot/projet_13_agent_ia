@@ -7,6 +7,7 @@ Crée l'application et expose les routes.
 from fastapi import APIRouter, FastAPI
 
 from app.config import API_DESCRIPTION, API_PREFIX, API_TITLE, API_VERSION
+from app.exceptions import register_exception_handlers
 from app.schemas import HealthResponse
 
 # --- Application -----------------------------------------------------------
@@ -16,6 +17,9 @@ app = FastAPI(
     description=API_DESCRIPTION,
     version=API_VERSION,
 )
+
+# Exceptions métier -> réponses HTTP (voir app/exceptions.py)
+register_exception_handlers(app)
 
 # --- Routes versionnées (/api/v1/...) --------------------------------------
 
