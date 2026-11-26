@@ -97,7 +97,7 @@ docker compose down
 
 | Étape | Sujet | État |
 |---|---|---|
-| 1 | Environnement de travail | 🔄 En cours |
+| 1 | Environnement de travail | ✅ Terminée |
 | 2 | Agent LangGraph | ⏳ |
 | 3 | RAG Milvus | ⏳ |
 | 4 | API YouTube | ⏳ |
