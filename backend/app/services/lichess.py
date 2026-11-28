@@ -72,7 +72,8 @@ def get_theoretical_moves(
     `client` permet aux tests d'injecter un faux transport (aucun appel réseau).
     """
     if client is None:
-        headers = {"Authorization": f"Bearer {LICHESS_TOKEN}"}
+         # Sans jeton, pas d'en-tête (une valeur "Bearer " vide est refusée par HTTP)
+        headers = {"Authorization": f"Bearer {LICHESS_TOKEN}"} if LICHESS_TOKEN else {}
         with httpx.Client(timeout=LICHESS_TIMEOUT_S, headers=headers) as own_client:
             data = _fetch(board, own_client)
     else:

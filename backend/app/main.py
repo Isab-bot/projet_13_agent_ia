@@ -8,7 +8,9 @@ from fastapi import APIRouter, FastAPI
 
 from app.config import API_DESCRIPTION, API_PREFIX, API_TITLE, API_VERSION
 from app.exceptions import register_exception_handlers
-from app.schemas import HealthResponse
+from app.schemas import HealthResponse, TheoreticalMovesResult
+from app.services.fen_validator import validate_fen
+from app.services.lichess import get_theoretical_moves
 
 # --- Application -----------------------------------------------------------
 
@@ -35,6 +37,20 @@ router = APIRouter(prefix=API_PREFIX)
 def healthcheck() -> HealthResponse:
     """Signe de vie de l'API, appelé par le HEALTHCHECK Docker."""
     return HealthResponse(status="ok", api_version=API_VERSION)
+
+@router.get(
+    "/moves/{fen:path}",
+    response_model=TheoreticalMovesResult,
+    summary="Coups théoriques d'une position (Lichess, parties de maîtres)",
+    tags=["lichess"],
+)
+def moves(fen: str) -> TheoreticalMovesResult:
+    """Valide la FEN puis interroge Lichess.
+
+    422 si la FEN est invalide, 503 si Lichess est indisponible.
+    """
+    board = validate_fen(fen)
+    return get_theoretical_moves(board)
 
 
 app.include_router(router)
